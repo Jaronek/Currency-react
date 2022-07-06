@@ -10,7 +10,6 @@ const ResultBox = ({ from, to, amount }) => {
     console.log(amount);
     console.log(from);
     console.log(to);
-    if(isNaN(amount)) return (NaN);
     if(from === 'USD' && to === 'PLN') return convertUSDToPLN(amount);
     if(from === 'PLN' && to === 'USD') return convertPLNToUSD(amount);
     return formatAmountInCurrency(amount, from);
@@ -18,6 +17,7 @@ const ResultBox = ({ from, to, amount }) => {
   const formattedAmount = useMemo(() => formatAmountInCurrency(amount, from), [amount, from]);
   console.log(convertedAmount)
   console.log(formattedAmount)
+  console.log(convertPLNToUSD(amount));
   return (
     <div className={styles.result}>
       {formattedAmount} = {convertedAmount}
