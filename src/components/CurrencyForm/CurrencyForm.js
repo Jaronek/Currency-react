@@ -4,6 +4,7 @@ import Select from './../Select/Select';
 import Button from './../Button/Button';
 import styles from './CurrencyForm.module.scss';
 
+
 const CurrencyForm = ({ action }) => {
   const [amount, setAmount] = useState('');
   const [from, setFrom] = useState('PLN');
@@ -11,11 +12,12 @@ const CurrencyForm = ({ action }) => {
   const handleSubmit = e => {
     e.preventDefault();
     action({
-      amount: amount,
+      amount: parseInt(amount),
       from,
       to,
-    });
+    })
   }
+  
   return (
     <form onSubmit={handleSubmit} className={styles.form}>
       <label>

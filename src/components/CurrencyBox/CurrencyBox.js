@@ -8,15 +8,15 @@ const CurrencyBox = () => {
     from: 'Zł',
     to: '$'
   });
+
   const handleDataChange = data => {
-     
-      setData(data)
-  };
+    setData(data);
+  }
 
   return (
     <main>
       <CurrencyForm action={handleDataChange} />
-      { data.amount  ? <ResultBox {...data} /> : null }
+      { data.amount ? <ResultBox {...data} /> : null }
     </main>
   );
 };

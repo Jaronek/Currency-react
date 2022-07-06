@@ -6,25 +6,23 @@ import { useMemo } from 'react';
 import styles from './ResultBox.module.scss';
 
 const ResultBox = ({ from, to, amount }) => {
+ console.log(amount)
   const convertedAmount = useMemo(() => {
-    console.log(amount);
-    console.log(from);
-    console.log(to);
     if(from === 'USD' && to === 'PLN') return convertUSDToPLN(amount);
     if(from === 'PLN' && to === 'USD') return convertPLNToUSD(amount);
     return formatAmountInCurrency(amount, from);
   }, [from, to, amount]);
   const formattedAmount = useMemo(() => formatAmountInCurrency(amount, from), [amount, from]);
-  console.log(convertedAmount)
-  console.log(formattedAmount)
-  console.log(convertPLNToUSD(amount));
   return (
     <div className={styles.result}>
       {formattedAmount} = {convertedAmount}
     </div>
   );
 };
-
+console.log(convertPLNToUSD(null));
+console.log(convertPLNToUSD({}));
+console.log(convertPLNToUSD([]));
+console.log(convertPLNToUSD(function() {}));
 ResultBox.propTypes = {
   from: PropTypes.string.isRequired,
   to: PropTypes.string.isRequired,
