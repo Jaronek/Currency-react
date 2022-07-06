@@ -9,14 +9,14 @@ const CurrencyBox = () => {
     to: '$'
   });
   const handleDataChange = data => {
-      if(isNaN(data.amount)){return(setData(data))}
-      else{setData(data)}
+     
+      setData(data)
   };
 
   return (
     <main>
       <CurrencyForm action={handleDataChange} />
-      { data.amount  ? <ResultBox {...data} /> : NaN }
+      { data.amount  ? <ResultBox {...data} /> : null }
     </main>
   );
 };

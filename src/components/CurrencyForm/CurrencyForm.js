@@ -10,9 +10,8 @@ const CurrencyForm = ({ action }) => {
   const [to, setTo] = useState('PLN');
   const handleSubmit = e => {
     e.preventDefault();
-    console.log(parseInt(amount))
     action({
-      amount: parseInt(amount),
+      amount: amount,
       from,
       to,
     });
