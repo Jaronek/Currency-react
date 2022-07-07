@@ -19,10 +19,7 @@ const ResultBox = ({ from, to, amount }) => {
     </div>
   );
 };
-console.log(convertPLNToUSD(null));
-console.log(convertPLNToUSD({}));
-console.log(convertPLNToUSD([]));
-console.log(convertPLNToUSD(function() {}));
+
 ResultBox.propTypes = {
   from: PropTypes.string.isRequired,
   to: PropTypes.string.isRequired,
