@@ -1,5 +1,8 @@
 export const convertUSDToPLN = (USD) => {
   const USDtoPLN = USD * 3.5;
+  if( USD < 0) return(
+    USD = "Wrong Value"
+  )
   const formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'PLN'
